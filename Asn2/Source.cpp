@@ -12,12 +12,7 @@ int studentDataToVector()
     std::vector<STUDENT_DATA> studentVector;
 
     // Open StudentData.txt
-
-#ifdef PRE_RELEASE
-    std::ifstream inputFile("StudentData_Emails.txt");
-#else
     std::ifstream inputFile("StudentData.txt");
-#endif
 
     // Error check for the file
     if (!inputFile.is_open()) {
