@@ -36,6 +36,7 @@ int studentDataToVector()
         student.lastName = last_name;
 
 #ifdef _DEBUG
+        // Display Student Data
         std::cout << student.firstName << student.lastName << std::endl;
 #endif
 
