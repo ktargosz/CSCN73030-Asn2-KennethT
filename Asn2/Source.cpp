@@ -4,13 +4,20 @@
 #include <iostream>
 #include "Source.h"
 
+#define PRE_RELEASE
+
 int studentDataToVector()
 {
     // Student Data Vector
     std::vector<STUDENT_DATA> studentVector;
 
     // Open StudentData.txt
+
+#ifdef PRE_RELEASE
+    std::ifstream inputFile("StudentData_Emails.txt");
+#else
     std::ifstream inputFile("StudentData.txt");
+#endif
 
     // Error check for the file
     if (!inputFile.is_open()) {
@@ -27,13 +34,13 @@ int studentDataToVector()
         size_t commaPosition = line.find(',');
 
         // Split the line into first and last name
-        std::string first_name = line.substr(0, commaPosition);
-        std::string last_name = line.substr(commaPosition + 1);
+        std::string firstName = line.substr(0, commaPosition);
+        std::string lastName = line.substr(commaPosition + 1);
 
         // Create a student object and add the data
         STUDENT_DATA student;
-        student.firstName = first_name;
-        student.lastName = last_name;
+        student.firstName = firstName;
+        student.lastName = lastName;
 
 #ifdef _DEBUG
         // Display Student Data
@@ -53,7 +60,13 @@ int studentDataToVector()
 
 int main()
 {
+#ifdef PRE_RELEASE
+    std::cout << "Running Pre-Release Source Code" << std::endl;
+#else
+    std::cout << "Running Standard Source Code" << std::endl;
+#endif
+
     studentDataToVector();
 
-	return 1;
+    return 1;
 }
