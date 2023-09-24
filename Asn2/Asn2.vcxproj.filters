@@ -20,10 +20,15 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\Downloads\StudentData.txt">
+    <ClInclude Include="Source.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="StudentData.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="..\..\..\..\Downloads\StudentData_Emails.txt">
+    <Text Include="StudentData_Emails.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
